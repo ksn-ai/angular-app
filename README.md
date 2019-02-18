@@ -2,6 +2,7 @@
 
 This project was generated with [Angular CLI]
 
+```
 Angular CLI: 7.3.1
 Node: 8.9.4
 OS: win32 x64
@@ -27,6 +28,7 @@ rxjs                              6.4.0
 typescript                        3.2.4
 webpack                           4.8.3
 
+```
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
