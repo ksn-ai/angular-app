@@ -1,0 +1,94 @@
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">
+
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span>User CRUD Application for CISCO</span>
+        <span class="user-spacer"></span>
+        <span flex></span>
+        <a href="/logout" tooltip="Logout">
+          <button mat-fab color="accent">
+            <i class="material-icons md-36">exit_to_app</i>
+          </button>
+        </a>
+
+      </mat-toolbar-row>
+
+    </mat-toolbar>
+
+    <mat-card>Add New User
+      <button mat-fab color="primary" (click)="addUser()">
+        <i class="material-icons md-40">person_add</i>
+      </button>
+    </mat-card>
+
+
+    <mat-card>
+
+      <table mat-table [dataSource]="users" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="first">
+          <th mat-header-cell *matHeaderCellDef> # </th>
+          <td mat-cell *matCellDef="let element">
+            <i class="material-icons md-36">person</i>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="uid">
+          <th mat-header-cell *matHeaderCellDef> UID. </th>
+          <td mat-cell *matCellDef="let element"> {{element.uid}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="address">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let element"> {{element.userDetails.address}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.userDetails.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-button color="warn" (click)="deleteUser(element)">
+              <i class="material-icons md-36">delete</i>
+            </button>
+            <button mat-button color="primary" (click)="editUser(element)">
+              <i class="material-icons md-36">edit</i>
+            </button>
+
+
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+
+    </mat-card>
+
+    <mat-card>
+      <div class="row">
+        <div class="col-md-2">
+         <a href="/console" target="_blank"><button mat-stroked-button routerLink="">Open H2 DB</button></a>
+        </div>
+        <div class="col-md-10">
+          <mat-card-content>
+            
+          </mat-card-content>
+
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div class="col-md-2"></div>
+
+</div>
